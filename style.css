@@ -1,0 +1,73 @@
+body {
+ font-family: Arial, sans-serif;
+ background: #1e1e2f;
+ color: #e22828;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ margin: 0;
+}
+
+
+.container {
+ text-align: center;
+}
+
+
+h1 {
+ margin-bottom: 20px;
+}
+
+
+.card {
+ background: #6868a8;
+ padding: 20px;
+ border-radius: 10px;
+ width: 300px;
+ box-shadow: 0 0 10px rgba(192, 121, 121, 0.5);
+}
+
+
+input[type="number"] {
+ width: 100%;
+ padding: 8px;
+ margin: 10px 0;
+}
+
+
+.options {
+ text-align: left;
+ margin-bottom: 10px;
+}
+
+
+button {
+ background: #4caf50;
+ border: none;
+ padding: 10px;
+ color: rgb(235, 68, 68);
+ cursor: pointer;
+ width: 100%;
+ margin-top: 10px;
+ border-radius: 5px;
+ transition: 0.3s;
+}
+
+
+button:hover {
+ background: #45a049;
+}
+
+
+.result {
+ margin-top: 10px;
+ display: flex;
+ gap: 5px;
+}
+
+
+.result input {
+ flex: 1;
+ padding: 8px;
+}
