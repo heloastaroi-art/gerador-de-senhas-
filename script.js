@@ -1,20 +1,34 @@
-function gerarSenha(tamanho = 16) {
-    const caracteres =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
-        "abcdefghijklmnopqrstuvwxyz" +
-        "0123456789" +
-        "!@#$%^&*()_+-=[]{}|;:,.<>?";
+function generatePassword() {
+ const length = document.getElementById("length").value;
 
-    const valores = new Uint32Array(tamanho);
-    crypto.getRandomValues(valores);
 
-    let senha = "";
+ const useUpper = document.getElementById("uppercase").checked;
+ const useNumbers = document.getElementById("numbers").checked;
+ const useSymbols = document.getElementById("symbols").checked;
 
-    for (let i = 0; i < tamanho; i++) {
-        senha += caracteres[valores[i] % caracteres.length];
-    }
 
-    return senha;
+ const lower = "abcdefghijklmnopqrstuvwxyz";
+ const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ const numbers = "0123456789";
+ const symbols = "!@#$%^&*()_+[]{}<>?";
+
+
+ let chars = lower;
+
+
+ if (useUpper) chars += upper;
+ if (useNumbers) chars += numbers;
+ if (useSymbols) chars += symbols;
+
+
+ let password = "";
+
+
+ for (let i = 0; i < length; i++) {
+   const randomIndex = Math.floor(Math.random() * chars.length);
+   password += chars[randomIndex];
+ }
+
+
+ document.getElementById("password").value = password;
 }
-
-console.log(gerarSenha(20));
